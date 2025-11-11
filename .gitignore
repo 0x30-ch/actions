@@ -1,0 +1,41 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+.pnpm-debug.log
+
+# TypeScript build artifacts
+dist-ts/
+*.tsbuildinfo
+
+# Local environment / IDE
+.env
+.env.*
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Coverage / test
+coverage/
+*.lcov
+jest-cache/
+.nyc_output/
+
+# Build cache / temp
+.tmp/
+temp/
+.cache/
+logs/
+*.log
+
+# ncc output (we DO commit dist/ for Actions)
+# /dist  # ❌ uncomment this only if you plan NOT to commit compiled action
+
+# Optional: macOS & system files
+Thumbs.db
+ehthumbs.db
+Icon?

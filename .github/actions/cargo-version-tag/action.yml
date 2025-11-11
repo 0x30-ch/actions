@@ -1,0 +1,40 @@
+name: "Tag from Cargo.toml"
+description: "Reads src-tauri/Cargo.toml version and pushes a tag if it doesn’t exist."
+branding: { icon: "tag", color: "blue" }
+
+inputs:
+  cargo-path:
+    description: "Path to Cargo.toml"
+    required: false
+    default: "src-tauri/Cargo.toml"
+  tag-prefix:
+    description: "Prefix for git tag (e.g., v)"
+    required: false
+    default: "v"
+  commit-message:
+    description: "Optional tag annotation message template ({version} will be replaced)"
+    required: false
+    default: "Release {version}"
+  push:
+    description: "Push tag to origin"
+    required: false
+    default: "true"
+  dry-run:
+    description: "If true, do not create or push"
+    required: false
+    default: "false"
+  token:
+    description: "GitHub token (defaults to GITHUB_TOKEN env)"
+    required: false
+
+outputs:
+  version:
+    description: "Version read from Cargo.toml"
+  tag-created:
+    description: "true if a new tag was created"
+  tag-name:
+    description: "The tag name (e.g., v1.2.3)"
+
+runs:
+  using: node20
+  main: dist/index.js
