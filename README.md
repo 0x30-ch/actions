@@ -62,7 +62,7 @@ jobs:
 
 ```yaml
 - name: Tag release
-  uses: 0x30/cargo-version-tag@v1
+  uses: 0x30-ch/cargo-version-tag@v1
   with:
     cargo-path: 'Cargo.toml'
 ```
@@ -71,7 +71,7 @@ jobs:
 
 ```yaml
 - name: Tag release with custom settings
-  uses: 0x30/cargo-version-tag@v1
+  uses: 0x30-ch/cargo-version-tag@v1
   with:
     cargo-path: 'backend/Cargo.toml'
     tag-prefix: 'backend-v'
@@ -83,7 +83,7 @@ jobs:
 
 ```yaml
 - name: Check what tag would be created
-  uses: 0x30/cargo-version-tag@v1
+  uses: 0x30-ch/cargo-version-tag@v1
   with:
     dry-run: true
 ```
@@ -93,7 +93,7 @@ jobs:
 ```yaml
 - name: Create tag
   id: tag
-  uses: 0x30/cargo-version-tag@v1
+  uses: 0x30-ch/cargo-version-tag@v1
 
 - name: Create GitHub Release
   if: steps.tag.outputs.tag-created == 'true'
